@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>121 Cafe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: #1a1614; 
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* اللوجو في الخلفية */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('131680.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15; 
+            z-index: -1;
+            filter: blur(4px); 
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(30, 20, 15, 0.75); 
+            padding: 30px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            width: 90%;
+            max-width: 400px;
+            z-index: 1;
+        }
+
+        .main-logo {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 2px solid rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            background: linear-gradient(45deg, #4a2e1b, #8b5a33); 
+            color: #fff;
+            font-size: 22px;
+            font-weight: 700;
+            padding: 15px 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(139, 90, 51, 0.4);
+            border: 1px solid #d4af37;
+        }
+
+        .btn-menu:hover {
+            transform: scale(1.05);
+            background: linear-gradient(45deg, #8b5a33, #4a2e1b);
+        }
+
+        .phones-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .btn-call {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: #d4af37;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .btn-call:hover {
+            background: rgba(212, 175, 55, 0.2);
+        }
+        
+        .btn-call::before {
+            content: "📞";
+            margin-left: 10px;
+            font-size: 18px;
+        }
+
+        /* قسم بيتر وبيشوي */
+        .footer-names {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+
+        .person {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .person-name {
+            font-size: 16px;
+            color: #aaaaaa;
+            font-weight: bold;
+        }
+
+        .person-number {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 14px;
+            background: rgba(255,255,255,0.1);
+            padding: 5px 10px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .person-number:hover {
+            background: #d4af37;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- اللوجو -->
+        <img src="131680.jpg" alt="121 Cafe Logo" class="main-logo">
+        
+        <!-- زرار المنيو -->
+        <a href="121 cafe_20260905_162408_٠٠٠٠_compressed(1) (1).pdf" class="btn-menu" target="_blank">📖 عرض المنيو</a>
+        
+        <!-- أرقام الكافيه الأساسية -->
+        <div class="phones-container">
+            <a href="tel:01000000000" class="btn-call">01000000000</a>
+            <a href="tel:01100000000" class="btn-call">01100000000</a>
+        </div>
+
+        <!-- أرقام الإدارة (بيتر يمين / بيشوي يسار) -->
+        <div class="footer-names">
+            <!-- اليمين -->
+            <div class="person">
+                <span class="person-name">بيتر</span>
+                <a href="tel:01200000000" class="person-number">01200000000</a>
+            </div>
+            
+            <!-- اليسار -->
+            <div class="person">
+                <span class="person-name">بيشوي</span>
+                <a href="tel:01500000000" class="person-number">01500000000</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
