@@ -4,196 +4,179 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>121 Cafe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <!-- استدعاء خطوط أنيقة -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
     
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Tajawal', sans-serif;
         }
 
         body {
-            background-color: #1a1614; 
-            color: #ffffff;
+            /* خلفية الشاشة بالكامل من صورة اللوجو */
+            background-image: url('131680.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            font-family: 'Tajawal', sans-serif;
             position: relative;
             overflow: hidden;
         }
 
-        /* اللوجو في الخلفية */
+        /* طبقة لونية هادئة (بيج/رمادي شفاف) فوق الخلفية لتوضيح الكلام */
         body::before {
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url('131680.jpg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.15; 
-            z-index: -1;
-            filter: blur(4px); 
+            background: rgba(244, 241, 234, 0.85); /* لون بيج هادئ جداً */
+            backdrop-filter: blur(5px);
+            z-index: 0;
         }
 
+        /* الحاوية الرئيسية */
         .container {
-            text-align: center;
-            background: rgba(30, 20, 15, 0.75); 
-            padding: 30px 20px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            width: 90%;
-            max-width: 400px;
+            position: relative;
             z-index: 1;
-            animation: fadeIn 1.2s ease-in-out;
+            text-align: center;
+            width: 90%;
+            max-width: 450px;
+            padding: 50px 30px;
+            background: rgba(255, 255, 255, 0.4);
+            border: 2px solid rgba(138, 130, 124, 0.2); /* إطار رمادي هادئ */
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(74, 54, 35, 0.15);
+            animation: slideUpFade 1.2s ease-out forwards;
         }
 
-        .main-logo {
-            width: 140px;
-            height: 140px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            border: 2px solid rgba(212, 175, 55, 0.5);
-            animation: float 3s ease-in-out infinite;
+        /* تصميم نصوص اللوجو */
+        .logo-text-container {
+            margin-bottom: 40px;
+            color: #4a3623; /* بني داكن */
+            animation: float 4s ease-in-out infinite;
         }
 
-        .btn-menu {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            background: linear-gradient(45deg, #4a2e1b, #8b5a33); 
-            color: #fff;
-            font-size: 22px;
-            font-weight: 700;
-            padding: 15px 30px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(139, 90, 51, 0.4);
-            border: 1px solid #d4af37;
-        }
-
-        .btn-menu:hover {
-            transform: scale(1.05);
-            background: linear-gradient(45deg, #8b5a33, #4a2e1b);
-        }
-
-        .phones-container {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 30px;
-        }
-
-        .btn-call {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            background: rgba(255, 255, 255, 0.1);
-            color: #d4af37;
-            font-size: 18px;
-            font-weight: 700;
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            transition: all 0.3s ease;
-            letter-spacing: 1px;
-        }
-
-        .btn-call:hover {
-            background: rgba(212, 175, 55, 0.2);
-            color: #fff;
-        }
-        
-        .btn-call::before {
-            content: "📞";
-            margin-left: 10px;
-            font-size: 18px;
-        }
-
-        /* قسم بيتر وبيشوي */
-        .footer-names {
-            display: flex;
-            justify-content: space-between;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 20px;
-        }
-
-        .person {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .person-name {
+        .top-text {
             font-size: 16px;
-            color: #aaaaaa;
-            font-weight: bold;
+            letter-spacing: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #6d5c50; /* بني رمادي */
+            display: block;
+            margin-bottom: -10px;
         }
 
-        .person-number {
-            text-decoration: none;
-            color: #ffffff;
+        .main-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 110px;
+            line-height: 1.1;
+            font-weight: 700;
+            color: #3b2a1a;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .bottom-text {
             font-size: 14px;
-            background: rgba(255,255,255,0.1);
-            padding: 5px 10px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            letter-spacing: 3px;
+            font-weight: 500;
+            color: #6d5c50;
+            text-transform: uppercase;
         }
 
-        .person-number:hover {
-            background: #d4af37;
-            color: #000;
+        /* حاوية الأزرار */
+        .buttons-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* تصميم زر الـ 3D */
+        .btn-3d {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 16px;
+            border-radius: 16px;
+            transition: all 0.15s ease;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+
+        /* زر المنيو (بني كلاسيكي) */
+        .btn-menu {
+            background-color: #5c4332;
+            color: #f4f1ea;
+            /* تأثير الـ 3D عبر الظل السفلي */
+            box-shadow: 0 8px 0 #36261c, 0 15px 20px rgba(0,0,0,0.2);
+        }
+
+        /* عند الضغط على زر المنيو */
+        .btn-menu:active {
+            transform: translateY(8px);
+            box-shadow: 0 0 0 #36261c, 0 5px 10px rgba(0,0,0,0.2);
+        }
+
+        /* زر الاتصال (رمادي/بيج داكن) */
+        .btn-call {
+            background-color: #8a827c;
+            color: #ffffff;
+            box-shadow: 0 8px 0 #5c5550, 0 15px 20px rgba(0,0,0,0.2);
+        }
+
+        /* عند الضغط على زر الاتصال */
+        .btn-call:active {
+            transform: translateY(8px);
+            box-shadow: 0 0 0 #5c5550, 0 5px 10px rgba(0,0,0,0.2);
+        }
+
+        /* الأيقونات */
+        .icon {
+            font-size: 24px;
         }
 
         /* حركات الأنيميشن */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes slideUpFade {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-            100% { transform: translateY(0px); }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- اللوجو -->
-        <img src="131680.jpg" alt="121 Cafe Logo" class="main-logo">
-        
-        <!-- زرار المنيو التفاعلي -->
-        <a href="https://online.fliphtml5.com/Alshaikh/vwke/#p=1" class="btn-menu" target="_blank">📖 عرض المنيو</a>
-        
-        <!-- أرقام الكافيه الأساسية -->
-        <div class="phones-container">
-            <a href="tel:01012345678" class="btn-call">01012345678</a>
-            <a href="tel:01112345678" class="btn-call">01112345678</a>
+        <!-- نصوص اللوجو -->
+        <div class="logo-text-container">
+            <span class="top-text">ONE TWO ONE</span>
+            <div class="main-number">121</div>
+            <span class="bottom-text">Speciality Coffee</span>
         </div>
 
-        <!-- أرقام الإدارة (بيتر يمين / بيشوي يسار) -->
-        <div class="footer-names">
-            <!-- اليمين -->
-            <div class="person">
-                <span class="person-name">بيتر</span>
-                <a href="tel:01212345678" class="person-number">01212345678</a>
-            </div>
+        <!-- الأزرار -->
+        <div class="buttons-wrapper">
+            <!-- زر المنيو -->
+            <a href="https://online.fliphtml5.com/Alshaikh/vwke/#p=1" class="btn-3d btn-menu" target="_blank">
+                <span class="icon">📖</span> عرض المنيو
+            </a>
             
-            <!-- اليسار -->
-            <div class="person">
-                <span class="person-name">بيشوي</span>
-                <a href="tel:01512345678" class="person-number">01512345678</a>
-            </div>
+            <!-- زر الاتصال (قم بتغيير الرقم هنا) -->
+            <a href="tel:01000000000" class="btn-3d btn-call">
+                <span class="icon">📞</span> اتصل بنا
+            </a>
         </div>
     </div>
 
