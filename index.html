@@ -46,9 +46,9 @@
             text-align: center;
             width: 90%;
             max-width: 450px;
-            padding: 50px 30px;
+            padding: 40px 30px;
             background: rgba(255, 255, 255, 0.4);
-            border: 2px solid rgba(138, 130, 124, 0.2); /* إطار رمادي هادئ */
+            border: 2px solid rgba(138, 130, 124, 0.2);
             border-radius: 30px;
             box-shadow: 0 20px 40px rgba(74, 54, 35, 0.15);
             animation: slideUpFade 1.2s ease-out forwards;
@@ -56,8 +56,8 @@
 
         /* تصميم نصوص اللوجو */
         .logo-text-container {
-            margin-bottom: 40px;
-            color: #4a3623; /* بني داكن */
+            margin-bottom: 35px;
+            color: #4a3623;
             animation: float 4s ease-in-out infinite;
         }
 
@@ -66,14 +66,14 @@
             letter-spacing: 4px;
             font-weight: 700;
             text-transform: uppercase;
-            color: #6d5c50; /* بني رمادي */
+            color: #6d5c50;
             display: block;
             margin-bottom: -10px;
         }
 
         .main-number {
             font-family: 'Playfair Display', serif;
-            font-size: 110px;
+            font-size: 100px;
             line-height: 1.1;
             font-weight: 700;
             color: #3b2a1a;
@@ -88,11 +88,12 @@
             text-transform: uppercase;
         }
 
-        /* حاوية الأزرار */
+        /* حاوية الأزرار الرئيسية */
         .buttons-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
+            margin-bottom: 25px;
         }
 
         /* تصميم زر الـ 3D */
@@ -102,46 +103,79 @@
             align-items: center;
             gap: 10px;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
-            padding: 16px;
-            border-radius: 16px;
+            padding: 14px;
+            border-radius: 14px;
             transition: all 0.15s ease;
             cursor: pointer;
             border: none;
-            outline: none;
         }
 
         /* زر المنيو (بني كلاسيكي) */
         .btn-menu {
             background-color: #5c4332;
             color: #f4f1ea;
-            /* تأثير الـ 3D عبر الظل السفلي */
             box-shadow: 0 8px 0 #36261c, 0 15px 20px rgba(0,0,0,0.2);
         }
 
-        /* عند الضغط على زر المنيو */
         .btn-menu:active {
             transform: translateY(8px);
             box-shadow: 0 0 0 #36261c, 0 5px 10px rgba(0,0,0,0.2);
         }
 
-        /* زر الاتصال (رمادي/بيج داكن) */
+        /* زر الاتصال الأساسي (رمادي داكن) */
         .btn-call {
             background-color: #8a827c;
             color: #ffffff;
             box-shadow: 0 8px 0 #5c5550, 0 15px 20px rgba(0,0,0,0.2);
         }
 
-        /* عند الضغط على زر الاتصال */
         .btn-call:active {
             transform: translateY(8px);
             box-shadow: 0 0 0 #5c5550, 0 5px 10px rgba(0,0,0,0.2);
         }
 
-        /* الأيقونات */
-        .icon {
-            font-size: 24px;
+        /* قسم الإدارة (بيتر وبيشوي) */
+        .management-section {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid rgba(138, 130, 124, 0.3);
+            padding-top: 20px;
+        }
+
+        .person {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            width: 45%;
+        }
+
+        .person-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: #4a3623;
+        }
+
+        /* زر 3D صغير لأرقام الإدارة */
+        .person-number {
+            text-decoration: none;
+            background-color: #a89f91;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 8px 10px;
+            border-radius: 10px;
+            box-shadow: 0 5px 0 #7a7369;
+            transition: all 0.15s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        .person-number:active {
+            transform: translateY(5px);
+            box-shadow: 0 0 0 #7a7369;
         }
 
         /* حركات الأنيميشن */
@@ -152,7 +186,7 @@
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-8px); }
         }
     </style>
 </head>
@@ -166,17 +200,32 @@
             <span class="bottom-text">Speciality Coffee</span>
         </div>
 
-        <!-- الأزرار -->
+        <!-- الأزرار الرئيسية -->
         <div class="buttons-wrapper">
-            <!-- زر المنيو -->
+            <!-- زر المنيو التفاعلي -->
             <a href="https://online.fliphtml5.com/Alshaikh/vwke/#p=1" class="btn-3d btn-menu" target="_blank">
-                <span class="icon">📖</span> عرض المنيو
+                📖 عرض المنيو
             </a>
             
-            <!-- زر الاتصال (قم بتغيير الرقم هنا) -->
-            <a href="tel:01000000000" class="btn-3d btn-call">
-                <span class="icon">📞</span> اتصل بنا
+            <!-- زر الاتصال الأساسي بالكافيه -->
+            <a href="tel:01276232463" class="btn-3d btn-call">
+                📞 اتصل بنا
             </a>
+        </div>
+
+        <!-- أرقام الإدارة -->
+        <div class="management-section">
+            <!-- اليمين -->
+            <div class="person">
+                <span class="person-name">بيتر</span>
+                <a href="tel:01276047663" class="person-number">01200000000</a>
+            </div>
+            
+            <!-- اليسار -->
+            <div class="person">
+                <span class="person-name">بيشوي</span>
+                <a href="tel:01032558241" class="person-number">01500000000</a>
+            </div>
         </div>
     </div>
 
